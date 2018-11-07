@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <style>
+      .thumb {
+        width: 45%;
+        float: left;
+      }
+      body {
+    background-color: beige;
+}
+img {
+    size: 300px 500px;
+    margin: 20px;
+
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+a:hover {
+    opacity: 50%;
+}
+
+    </style>
+  </head>
+  <body>
+    <ul>
+
+      {% for article in articles %}
+        {% if article.urlToImage %}
+        <a href="{{article.url}}" title="{{article.title}}"><img class="thumb" src="{{article.urlToImage}}"/></a>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+  </body>
+</html>
